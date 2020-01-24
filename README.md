@@ -36,3 +36,13 @@ With Chai installed we can then add assertions into our code.
 // assert, so we are going to use the expect library.
 
 var expect = require('chai').expect;
+
+##### 6. add file env.sample
+```cp env.sample .env```
+to create .env file
+
+
+
+
+
+
