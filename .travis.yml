@@ -7,4 +7,5 @@ install:
 - npm install
 
 script:
+- cp env.sample .env
 - npm run test-api
