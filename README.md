@@ -1,48 +1,81 @@
-# mocha
+# Automation API Testing Framework
 
+> Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases
 
-##### 1. Install mocha
-```npm install --global mocha```
-The global parameter means that rather than installing Mocha to a local folder within your project root folder, Mocha is installed in your home directory and can then be used in your terminal or command line at any time against any project.
+> Chai is a assertion library for Node and the browser and can be used with any testing framework (like Mocha)
 
-##### 2. Check mocha version
-```mocha --version```
-You can test this out by opening a new terminal/command line window and calling Mocha to see if it’s installed correctly.
+### Prerequisites:
 
-##### 3. Create folder qa_test and enter the folder
-```mkdir qa_test```
-```cd qa_test```
-First up we need to create a folder named qa_test in our project. As default, Mocha looks for a test folder and then executes any test files that exist in that folder. Then cd to your working directory. Start your project by typing npm init inside your working directory.
+-   Install Node.js and npm, we will use npm to install Mocha and Chai
+-   POSTMAN for making fast HTTP requests to the API
 
-##### 4. Create package.json file 
-```npm init -y```
-Now, let’s start by creating the init file. Open terminal(command prompt, if you are on windows). 
-It will generate a package.json file for you.
+### How to Getting Started:
 
-##### 5. Install chai assertion library
-```npm install chai```
-How do we know if our test was successful? This is where assertions come in.
+```sh
+$ cd qa_test
+$ npm install
+$ cp env.sample .env
+```
 
-Assertions are important. Very important when it comes to automated checking. This is our attempt at replacing ourselves. When we run the scenario we are automating, how are we deciding if what the application is presenting us is acceptable? We need to work out what this is and instruct our code to do the assertions that meet that acceptable criterion. Fortunately, they give us many options for doing this.
+### This is directory structure within `qa_test`
 
-Mocha itself doesn’t come with assertion libraries, but there are many assertion libraries that you can choose from. For now we are going to use Chai, which is a very popular assertion library for Node. To install it, simply run:
+##### -- api
 
-With Chai installed we can then add assertions into our code.
+##### ---- data
 
-// First of all we need to import the chai library to use in our
+##### ---- helper
 
-// tests. Chai comes in three different flavours should, expect and
+##### ---- page
 
-// assert, so we are going to use the expect library.
+##### ---- test
 
-var expect = require('chai').expect;
+##### -- reports
 
-##### 6. add file env.sample
-```cp env.sample .env```
-to create .env file
+##### -- seed_data
 
+##### -- .env
 
+##### -- package.json
 
+#
 
+#
 
+| Directory | Description                                                       |
+| --------- | ----------------------------------------------------------------- |
+| data      | For test data, file extention should be .json                     |
+| helper    | Common code, for general needed such as response_code, token, etc |
+| page      | 1 endpoint, many HTTP method in one file .js                      |
+| test      | 1 endpoint, 1 HTTP method, many test cases                        |
 
+### Foldering and Naming Convention
+
+1. Filename using `snake_case`
+2. Variable name using `camelCase`
+3. The file (.js and .json) should be located in a path that matches the endpoint path
+
+```sh
+POST {{url}}/suggestions/product
+--page: /qa_test/api/page/suggentions/product.js
+--test: /qa_test/api/test/suggentions/get_product_test.js
+        /qa_test/api/test/suggentions/post_product_test.js
+--data: /qa_test/api/data/suggentions/product_data.json
+```
+
+## Run the test
+
+You can specify the command that you want to run from package.json file.
+
+###### Here are our default commands:
+
+#
+
+```sh
+$ npm run test-api | to run all tests
+$ npm run test-api -- --grep @tag | to run test with specific tag
+$ npm run test-api -- --grep @skip --invert | to exclude @skip tag
+
+$ npm run test-reports | to generate mochawesome report
+```
+
+# Let's make TRUSTED and IMPACTFUL tests!
