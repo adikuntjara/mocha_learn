@@ -1,1 +1,7 @@
 /node_modules
+
+#qa_test
+/qa_test/node_modules
+/qa_test/reports
+/qa_test/package-lock.json
+/qa_test/.env
