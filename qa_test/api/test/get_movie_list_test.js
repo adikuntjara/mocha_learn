@@ -1,6 +1,6 @@
 const assert = require('chai').expect;
 
-const code = require('../../../qa_test/api/helper/response_code_message.json')
+const code = require('../../../qa_test/api/helper/reponse_code_message.json')
 const data = require('../../../qa_test/api/data/get_movie_list_data.json')
 const page = require('../../../qa_test/api/page/get_movie_list_page.js');
 
