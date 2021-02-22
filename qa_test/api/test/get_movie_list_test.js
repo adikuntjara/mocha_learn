@@ -25,7 +25,7 @@ describe(`OMDB Movie List`, () => {
             const response = await page.getMovieList(data.apiKey, '');
             assert(response.status).to.equal(code.successOk, response.body.message);
             assert(response.body.Response).to.equal('False');
-            assert(response.body.Error).to.equal('Something went wrong.');
+            assert(response.body.Error).to.equal('Incorrect IMDb ID.');
         }),
 
         it(`@get ${testCase.negative.invalidApiKey}`, async () => {
