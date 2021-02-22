@@ -14,7 +14,8 @@
 ```sh
 $ cd qa_test
 $ npm install
-$ cp env.sample .env
+$ cp env.sample .env //when using mac
+$ copy env.sample .env //when using windows
 ```
 
 ### This is directory structure within `qa_test`
