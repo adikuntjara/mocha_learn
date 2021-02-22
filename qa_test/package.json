@@ -4,7 +4,7 @@
   "description": "POC API Testing Framework with Mocha and Chai",
   "main": "index.js",
   "scripts": {
-    "test-api": "./node_modules/mocha/bin/mocha ./api/test --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/ --timeout 180000",
+    "test-api": "node ./node_modules/mocha/bin/mocha ./api/test --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/ --timeout 180000",
     "reports": "open 'reports/mochawesome/mochawesome.html'"
   },
   "author": "Laksana Adi",
